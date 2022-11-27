@@ -7,7 +7,7 @@ export const Home = () => {
   useEffect(() => {
     getTrendingMovies().then(res => {
       setMovies(res.results);
-      console.log(res.results);
+      // console.log(res.results);
     });
   }, []);
   return (
