@@ -22,7 +22,7 @@ export const Movies = () => {
       return;
     }
     getMoviesByQuery(params).then(res => setMovies(res));
-  }, [searchParams]);
+  }, [query, searchParams]); // dependencies????????????????
   return (
     <div>
       <form onSubmit={handleSubmit}>
