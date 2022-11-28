@@ -21,3 +21,19 @@ export const getMoviesByQuery = async query => {
   );
   return res.data.results;
 };
+
+//Cast
+export const getCast = async id => {
+  const res = await axios.get(
+    `movie/${id}/credits?api_key=${KEY}&language=en-US`
+  );
+  return res.data.cast;
+};
+
+//Reviews
+export const getReviews = async id => {
+  const { data } = await axios.get(
+    `movie/${id}/reviews?api_key=${KEY}&language=en-US&page=1`
+  );
+  return data.results;
+};
