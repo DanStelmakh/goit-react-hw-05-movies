@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getCast } from 'Services/Api';
-
+import { List, Item, Wrapper } from './Cast.styled';
 export const Cast = () => {
   const [cast, setCast] = useState([]);
   const { movieId } = useParams();
@@ -13,12 +13,12 @@ export const Cast = () => {
     return;
   }
   return (
-    <div>
-      <ul>
+    <Wrapper>
+      <List>
         {cast.map(({ id, name }) => (
-          <li key={id}>{name}</li>
+          <Item key={id}>{name}</Item>
         ))}
-      </ul>
-    </div>
+      </List>
+    </Wrapper>
   );
 };

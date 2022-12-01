@@ -1,6 +1,6 @@
-import { Home } from 'pages/Home';
-import { Movies } from 'pages/Movies';
-import { MoviesDetails } from 'pages/MoviesDetails';
+import { Home } from 'pages/Home/Home';
+import { Movies } from 'pages/Movies/Movies';
+import { MoviesDetails } from 'pages/MoviesDetails/MoviesDetails';
 import { Routes, Route } from 'react-router-dom';
 import { Cast } from './Cast/Cast';
 import { Nav } from './Navigation/Navigation';
