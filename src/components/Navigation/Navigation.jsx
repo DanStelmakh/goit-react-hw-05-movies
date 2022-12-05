@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 import { NavItem, NavList, StyledLink } from './Navigation.styled';
 
 export const Nav = () => {
