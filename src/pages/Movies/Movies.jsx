@@ -7,22 +7,23 @@ export const Movies = () => {
   const [query, setQuery] = useState('');
   const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
+  const params = searchParams.get('query');
 
   const handleChange = e => {
     setQuery(e.target.value);
+    //  console.log(e.target.value);
   };
   const handleSubmit = e => {
     e.preventDefault();
-    setSearchParams({ query }); // записываем в URL значение поиска
+    setSearchParams(query !== '' ? { query } : {});
   };
 
   useEffect(() => {
-    const params = searchParams.get('query');
     if (!params) {
       return;
     }
-    getMoviesByQuery(params).then(res => setMovies(res));
-  }, [query, searchParams]);
+    getMoviesByQuery(params).then(setMovies);
+  }, [params]);
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -30,6 +31,7 @@ export const Movies = () => {
           autoComplete="off"
           type="text"
           name="movie"
+          placeholder="Enter the movie..."
           onChange={handleChange}
           value={query}
         />

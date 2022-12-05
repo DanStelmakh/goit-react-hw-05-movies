@@ -3,17 +3,20 @@ import { MovieLink } from 'components/MoviesList/MoviesList.styled';
 
 export const WrapperTitle = styled.h1`
   color: ${p => p.theme.colors.text};
-  margin-bottom: ${p => p.theme.space[3]}px;
+  /* margin-bottom: ${p => p.theme.space[3]}px; */
 `;
 
 export const Wrapper = styled.div`
   display: flex;
   justify-content: start;
+  align-items: flex-start;
   gap: ${p => p.theme.space[3]}px;
 `;
 
-export const Poster = styled.img``;
-export const OverviewTitle = styled.h2`
+export const Poster = styled.img`
+  width: 1000px;
+`;
+export const InfoTitle = styled.h2`
   color: ${p => p.theme.colors.text};
 `;
 
